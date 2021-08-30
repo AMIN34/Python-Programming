@@ -1,0 +1,16 @@
+s1 = set()
+s2 = set()
+n=int(input("How many values in 1st set:- "))
+for i in range(n):
+    x=int(input("Enter the value: "))
+    s1.add(x)
+n=int(input("How many values in 2nd set:- "))
+for i in range(n):
+    x=int(input("Enter the value: "))
+    s2.add(x)
+print("Original sets: ")
+print("1st set:-",s1)
+print("2nd set:-",s2)
+print("Removing the intersection of a 2nd set from the 1st set: ")
+s1.difference_update(s2)
+print(s1)
