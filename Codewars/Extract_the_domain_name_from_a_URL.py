@@ -15,10 +15,15 @@ def domain_name(url):
     return re.search('(https?://)?(www\d?\.)?(?P<name>[\w-]+)\.', url).group('name')
 
 # Method 2) Using string replace. 
-"""We are replacing the protocol name and subdomain wih null i.e. in other words we are removing that part. So what remains is the name with the rest.
-For extracting the name we can use string slicing upto the next '.' after which there is top level domain."""
+""" We are replacing the protocol name and subdomain wih null i.e. in other words we are removing that part. So what remains is the name with the rest.
+For extracting the name we can use string slicing upto the next '.' after which there is top level domain. """
 def domain_name(url):
     url=url.replace("https://",'')
     url=url.replace("http://",'')
     url=url.replace("www.",'')
     return url[0:url.find('.')]
+
+# Method 3) Short form of the upper method but without any string replacement.
+""" Here we are using purely string slicing """
+def domain_name(url):
+    return url.split("//")[-1].split("www.")[-1].split(".")[0]
