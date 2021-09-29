@@ -6,7 +6,7 @@ upper="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 num="1234567890"
 symbols="[],./;*\&#@$!_"
 all=lower+upper+num+symbols
-length=input("Enter Length of random Password: ")
+length=input("Enter Length of random Password (Default 16): ")
 if len(length)==0:
 	length=16
 else:
